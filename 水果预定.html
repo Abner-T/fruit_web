@@ -1,0 +1,457 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>水果预定</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <script src="js/jQuery3.4.1.js"></script>
+    <script src="js/bootstrap.bundle.js"></script>
+    <script src="js/vue.js"></script>
+    <style>
+        .time{
+            color:dimgray;
+        }
+        .btn-color {
+            color: #fff;
+            background-color: greenyellow;
+            border-color: greenyellow;
+        }
+        
+        .btn-color:hover {
+            color: #fff;
+            background-color: greenyellow;
+            border-color: greenyellow;
+        }
+        
+        .btn-color:focus,
+        .btn-color:focus {
+            color: #fff;
+            background-color: greenyellow;
+            border-color: greenyellow;
+            box-shadow: 0 0 0 0.2rem rgba(171, 42, 132, 0.5);
+        }
+        
+        .btn-color.disabled,
+        .btn-color:disabled {
+            color: #fff;
+            background-color: greenyellow;
+            border-color: greenyellow;
+        }
+        
+        .btn-color:not(:disabled):not(.disabled):active,
+        .btn-color:not(:disabled):not(.disabled).active,
+        .show>.btn-color.dropdown-toggle {
+            color: #fff;
+            background-color: greenyellow;
+            border-color: greenyellow;
+        }
+        
+        .btn-color:not(:disabled):not(.disabled):active:focus,
+        .btn-color:not(:disabled):not(.disabled).active:focus,
+        .show>.btn-color.dropdown-toggle:focus {
+            box-shadow: 0 0 0 0.2rem rgba(171, 42, 132, 0.5);
+        }
+        
+        .bg-color {
+            border-color: greenyellow;
+            background-color: greenyellow;
+        }
+        
+        .bg-color:hover {
+            border-color: greenyellow;
+            background-color: greenyellow;
+        }
+        
+        .divLink {
+            padding: 30px 0px;
+            background-color: bisque;
+        }
+        
+        .footer.row a {
+            color: #333;
+            font: 15px "microsoft yahei";
+        }
+        
+        .centerLink ul {
+            list-style: none;
+            margin: 0px;
+            padding: 0px;
+        }
+        
+        .centerLink ul li {
+            line-height: 2.5;
+        }
+        
+        .rightLink {
+            padding: 20px 0px 20px 0px;
+        }
+        
+        .rightLink p {
+            text-align: center;
+        }
+        
+        .divCopyright {
+            background-color: greenyellow;
+        }
+        
+        .divCopyright center {
+            color: #333;
+            font: 15px "microsoft yahei";
+        }
+        
+        .lbox {
+            margin: 50px;
+            padding: 10px;
+        }
+        
+        .lbox.row {
+            padding: 8px 0px;
+        }
+        
+        .progress {
+            margin-top: 5px;
+        }
+        
+        .bg-color1 {
+            background-color: lightgreen;
+        }
+        .input-group{
+            width: 400px;
+            margin: 10px 150px 10px ;
+        }
+
+    </style>
+</head>
+
+<body>
+<div id="shopcart">
+    <div class="container">
+        <div class="row">
+            <div class="col-6 col-md-5" style="padding-top: 2.5%;">
+                <img src="img/logo.png" class="img-fluid">
+            </div>
+            <div class="col-6 col-md-7" style="padding-top: 2.5%;">
+
+                <form>
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="请输入关键字进行站内搜索" v-model="input">
+                        <div class="input-group-append">
+                            <button class="btn btn-color" type="submit">搜索</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-13 col-md-13" style="padding-top: 1.5%;">
+        <nav class="navbar navbar-expand-md navbar-light bg-color">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu">
+                 <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="menu">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link text-white" href="首页.html">首页</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link text-white" data-toggle="dropdown" href="#">品牌</a>
+                            <div class="dropdown-menu bg-color">
+                                <a class="dropdown-item bg-color text-white" href="品牌.html">品牌形象</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown nav-pills nav-fill">
+                            <a class="nav-link text-white" data-toggle="dropdown" href="#">产品</a>
+                            <div class="dropdown-menu bg-color">
+                                <a class="dropdown-item bg-color text-white" href="产品.html">优质蔬果</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="水果预定.html">水果预订</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="关于我们.html">关于我们</a>
+                        </li>
+                    </ul>
+                </div>
+                <div id="time1" class="time">
+                    <span>现在的时间是: &nbsp;{{time| parsetime}}</span>
+                </div>
+            </div>
+        </nav>
+        </div>
+
+    <div class="container" style="padding-top :30px;">
+        <div class="row">
+            <div class="col-sm-4 bg-color1 text-black left">
+                <div class="lbox">
+                    <p><i class="fa fa-calendar"></i>&nbsp;&nbsp;时间：2021.12.23</p>
+                    <p><i class="fa fa-phone"></i>&nbsp;&nbsp;联系电话：13712525622</p>
+                    <p><i class="fa fa-envelope-o"></i>&nbsp;&nbsp;电子邮箱：34444885552@qq.com</p>
+
+                </div>
+                <div class="lbox">
+                    <h4>水果存货</h4>
+                    <div class="row">
+                        <div class="col-sm-5">
+                            <span>新疆葡萄</span>
+                        </div>
+                        <div class="col-sm-7">
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-striped bg-warning progress-bar-animated" style="width: 95%;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-5">
+                            <span>广东荔枝</span>
+                        </div>
+                        <div class="col-sm-7">
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-striped bg-warning progress-bar-animated" style="width: 50%;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-5">
+                            <span>糖心苹果</span>
+                        </div>
+                        <div class="col-sm-7">
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-striped bg-warning progress-bar-animated" style="width: 20%;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-5">
+                            <span>牛油果</span>
+                        </div>
+                        <div class="col-sm-7">
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-striped bg-warning progress-bar-animated" style="width: 60%;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-5">
+                            <span>奇异果</span>
+                        </div>
+                        <div class="col-sm-7">
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-striped bg-warning progress-bar-animated" style="width: 85%;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-5">
+                            <span>湛江菠萝</span>
+                        </div>
+                        <div class="col-sm-7">
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-striped bg-warning progress-bar-animated" style="width: 66%;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-5">
+                            <span>杏坛龙眼</span>
+                        </div>
+                        <div class="col-sm-7">
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-striped bg-warning progress-bar-animated" style="width: 42%;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-sm-8 border right">
+                <div id="shopcart1">
+
+
+                    <table class="table" >
+                        <thead class="thead-light">
+                            <tr>
+                                <th scope="col">水果类型</th>
+                                <th scope="col">水果数量</th>
+                                <th scope="col">水果单价</th>
+                                <th scope="col">商品金额(元)</th>
+                                <th scope="col">操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr v-for="(item,i) in searchData" @key="i">
+                                <th scope="row">{{item.name}}</th>
+                                <td>
+                                    <button @click="item.count-- " :disabled="item.count<=0">—</button>
+                                    {{item.count}}
+                                    <button @click="item.count++ " >+</button>
+                                </td>
+                                <td>{{item.price | priceFilter}}</td>
+                                <td>{{item.count*item.price | priceFilter}}</td>
+                                <td><input type="button" name="bookbtn" class="bookbtn bookbtn-success" value="商品详情" /></td>
+                            </tr>
+                                <tr>
+                                    <td colspan="5" style="text-align: center"> {{totalcount}}件商品总计(不含运费): {{totalprice | priceFilter}}</td>
+                                </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <div class="footer" style="padding-top: 5%;">
+        <div class="divLink">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md-4 leftLink">
+                        <center>
+                            <img class="img-fluid" src="img/logo.png" style="padding-top: 30px; padding-left: 0.5px;">
+                        </center>
+                    </div>
+                    <div class="col-12 col-md-4 centerLink" style="padding-top: 35px;">
+                        <div class="row">
+                            <div class="col-12">
+                                <a>官方电话号码：13712525622</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4 rightLink">
+                        <div class="row">
+                            <div class="col-3 offset-2">
+                                <a href="#"><img src="img/wecaht.png" style="padding-left: 20%;" width="60" /></a>
+                                <p>官方微信</p>
+                            </div>
+                            <div class="col-3">
+                                <a href="#"><img src="img/weibo.png" style="padding-left: 20%;" width="50" /></a>
+                                <p>官方微博</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="divCopyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <center>地址：广东省广州市白云区江高镇大田村广东白云学院&nbsp;|&nbsp;版权所有：广东白云学院</center>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    new Vue({
+        el:'#shopcart',
+        data:{
+            input:'',
+            items:[
+                {name:'秘鲁牛油果',price:5,count:0},
+                {name:'新西兰奇异果',price:7,count:0},
+                {name:'泰国椰青',price:20,count:0},
+                {name:'菲律宾香蕉',price:3,count:0},
+                {name:'南非红心西柚',price:20,count:0},
+                {name:'越南火龙果',price:5,count:0},
+                {name:'墨西哥菠萝蜜',price:25,count:0},
+                {name:'秘鲁蓝莓',price:3,count:0},
+                {name:'哈密瓜',price:18,count:0},
+                {name:'橘子',price:2,count:0},
+                {name:'百香果',price:8,count:0},
+                {name:'桃子',price:3,count:0},
+                {name:'西瓜',price:22,count:0},
+            ]
+        },
+        methods:{
+
+        },
+        computed:{
+          totalcount(){
+                /*var n=0;
+                this.items.forEach(function (item,index) {
+                    n+=item.count;
+                });
+                return n;*/
+              return this.items.reduce((total,current)=>total+current.count,0) //累加器
+          },
+            totalprice(){
+                /*var n=0;
+                this.items.forEach(function (item,index) {
+                    n+=item.count*item.price;
+                });
+                return n;*/
+                return this.items.reduce((total,current)=>total+current.count*current.price,0)
+            },
+            searchData(){
+              return this.items.filter((item)=>{
+                  return item.name.indexOf(this.input)!=-1
+                })
+            }
+        },
+        filters:{  //过滤器 文本格式化
+            priceFilter(p,type='¥',n=2){
+                return type+p.toFixed(n)
+            }
+        }
+    });
+
+    var getTime = function() {
+        var weeks = new Array('星期天', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六');
+        var date = new Date();
+        var year = date.getFullYear();
+        var month = date.getMonth() + 1;
+        var day = date.getDate();
+        var week = date.getDay();
+        var hour = date.getHours();
+        var minutes = date.getMinutes();
+        var seconds = date.getSeconds();
+        return year + '年' + month + '月' + day + '日' + '  ' + weeks[week] + '  ' + hour + ":" + minutes + ":" +
+            seconds;
+    };
+
+    new Vue({
+
+            el:'#time1',
+        data:{
+            time:''
+        },
+        filters: {
+            parsetime: getTime
+        },
+        methods: {
+            refreshTime() {
+                var updataTime = getTime();
+                this.time = updataTime;
+            }
+        },
+        mounted() {
+            this.timer = setInterval(this.refreshTime, 1000);
+            console.log(getTime());
+        },
+        beforeDestroy() {
+            clearInterval(this.timer);
+        }
+    })
+</script>
+
+
+</body>
+
+</html>

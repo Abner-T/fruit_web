@@ -1,0 +1,364 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>品牌</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <script src="js/jQuery3.4.1.js"></script>
+    <script src="js/bootstrap.bundle.js"></script>
+    <script src="js/vue.js"></script>
+    <style>
+        .time{
+            color:dimgray;
+        }
+     .btn-color {
+            color: #fff;
+            background-color: greenyellow;
+            border-color: greenyellow;
+        }
+        
+        .btn-color:hover {
+            color: #fff;
+            background-color: greenyellow;
+            border-color: greenyellow;
+        }
+        
+        .btn-color:focus,
+        .btn-color:focus {
+            color: #fff;
+            background-color: greenyellow;
+            border-color: greenyellow;
+            box-shadow: 0 0 0 0.2rem rgba(171, 42, 132, 0.5);
+        }
+        
+        .btn-color.disabled,
+        .btn-color:disabled {
+            color: #fff;
+            background-color: greenyellow;
+            border-color: greenyellow;
+        }
+        
+        .btn-color:not(:disabled):not(.disabled):active,
+        .btn-color:not(:disabled):not(.disabled).active,
+        .show>.btn-color.dropdown-toggle {
+            color: #fff;
+            background-color: greenyellow;
+            border-color: greenyellow;
+        }
+        
+        .btn-color:not(:disabled):not(.disabled):active:focus,
+        .btn-color:not(:disabled):not(.disabled).active:focus,
+        .show>.btn-color.dropdown-toggle:focus {
+            box-shadow: 0 0 0 0.2rem rgba(171, 42, 132, 0.5);
+        }
+        
+        .bg-color {
+            border-color: greenyellow;
+            background-color: greenyellow;
+        }
+        
+        .bg-color:hover {
+            border-color: greenyellow;
+            background-color: greenyellow;
+        }
+        .divLink{
+            padding: 30px 0px;
+            background-color:bisque;
+        }
+        .footer.row a{
+            color: #333;
+            font: 15px "microsoft yahei";
+        }
+        .centerLink ul{
+            list-style: none;
+            margin: 0px;
+            padding: 0px;
+        }
+        .centerLink ul li{
+            line-height: 2.5;
+        }
+        .rightLink{
+            padding: 20px 0px 20px 0px;
+        }
+        .rightLink p{
+            text-align: center;
+        }
+        .divCopyright{
+            background-color:greenyellow;
+
+        }
+        .divCopyright center{
+            color: #333;
+            font: 15px "microsoft yahei"; 
+        }
+        .card-cover{
+            flex-shrink: 0;
+        }
+        .imgContain{
+            position: absolute;
+            top: 0%;
+            left: 0%;
+            display: none;
+        }
+        
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-6 col-md-5" style="padding-top: 2.5%;">
+            <img src="img/logo.png" class="img-fluid">
+        </div>
+        <div class="col-6 col-md-7" style="padding-top: 2.5%;">
+            <form>
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="请输入关键字进行站内搜索">
+                    <div class="input-group-append">
+                        <button class="btn btn-color" type="submit">搜索</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="col-13 col-md-13" style="padding-top: 1.5%;">
+    <nav class="navbar navbar-expand-md navbar-light bg-color">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu">
+             <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link text-white" href="首页.html">首页</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link text-white" data-toggle="dropdown" href="#">品牌</a>
+                        <div class="dropdown-menu bg-color">
+                            <a class="dropdown-item bg-color text-white" href="品牌.html">品牌形象</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown nav-pills nav-fill">
+                        <a class="nav-link text-white" data-toggle="dropdown" href="#">产品</a>
+                        <div class="dropdown-menu bg-color">
+                            <a class="dropdown-item bg-color text-white" href="产品.html">优质蔬果</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="水果预定.html">水果预订</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="关于我们.html">关于我们</a>
+                    </li>
+                </ul>
+            </div>
+            <div id="time1" class="time">
+                <span>现在的时间是: &nbsp;{{time| parsetime}}</span>
+            </div>
+        </div>
+    </nav>
+    </div>
+     
+    <div class="container">
+        <div class="row">
+            <div class="col-12" style="margin: 20px 0px;">
+                <div class="carousel slide" id="myCarousel" data-ride="carousel" data-interval="3000">
+                    <ol class="carousel-indicators">
+                        <li data-slide-to="0" data-target="#myCarousel" class="active"></li>
+                        <li data-slide-to="1" data-target="#myCarousel"></li>
+                        <li data-slide-to="2" data-target="#myCarousel"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img alt="" class="d-block w-100" src="img/pinpai.jpg" width="100" height="300" />
+                        </div>
+                        <div class="carousel-item">
+                            <img alt="" class="d-block w-100 " src="img/pinpai.jpg" width="100" height="300" />
+                        </div>
+                        <div class="carousel-item">
+                            <img alt="" class="d-block w-100 " src="img/pinpai.jpg" width="100" height="300" />
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" data-slide="prev" href="#myCarousel" role="button">
+                        <span class="carousel-control-prev-icon"></span>
+                    </a>
+                    <a class="carousel-control-next" data-slide="next" href="#myCarousel" role="button">
+                        <span class="carousel-control-next-icon"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+       <div class="row">
+         <div class="col-md-4 mb-3">
+            <div class="card">
+                <div class="card-cover">
+                    <img class="card-img-top" src="img/d1.png">
+                    
+                    </div>
+                    <div class="card-body">
+                        <h5>伦教分店</h5>
+                        <small>伦教分店是我们的第一家分店，生意火爆！</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <div class="card-cover">
+                        <img class="card-img-top" src="img/d2.jpg">
+                        
+                        </div>
+                        <div class="card-body">
+                            <h5>大良分店</h5>
+                            <small>大良分店是我们的第二家分店，生意火爆！</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <div class="card">
+                        <div class="card-cover">
+                            <img class="card-img-top" src="img/d3.jpg">
+                            
+                            </div>
+                            <div class="card-body">
+                                <h5>容桂分店</h5>
+                                <small>容桂分店是我们的第三家分店，生意火爆！</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="card">
+                            <div class="card-cover">
+                                <img class="card-img-top" src="img/d4.jpg">
+                                
+                                </div>
+                                <div class="card-body">
+                                    <h5>杏坛分店</h5>
+                                    <small>杏坛分店是我们的第四家分店，生意火爆！</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="card">
+                                <div class="card-cover">
+                                    <img class="card-img-top" src="img/d5.jpg">
+                                    
+                                    </div>
+                                    <div class="card-body">
+                                        <h5>陈村分店</h5>
+                                        <small>陈村分店是我们的第五家分店，生意火爆！</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <div class="card">
+                                    <div class="card-cover">
+                                        <img class="card-img-top" src="img/d6.jpg">
+                                        
+                                        </div>
+                                        <div class="card-body">
+                                            <h5>均安分店</h5>
+                                            <small>均安分店是我们的第六家分店，生意火爆！</small>
+                                        </div>
+                                    </div>
+                                </div>    
+                            </div>
+
+     <div class="footer" style="padding-top: 5%;">
+        <div class="divLink">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md-4 leftLink">
+                        <center>
+                            <img class="img-fluid" src="img/logo.png" style="padding-top: 30px; padding-left: 0.5px;" >
+                        </center>
+                    </div>
+                    <div class="col-12 col-md-4 centerLink" style="padding-top: 35px;">
+                     <div class="row">
+                         <div class="col-12">   
+                        <a>官方电话号码：13712525622</a>
+                         </div>
+                     </div>
+                    </div>
+                    <div class="col-12 col-md-4 rightLink">
+                        <div class="row">
+                            <div class="col-3 offset-2">
+                                <a href="#"><img src="img/wecaht.png" style="padding-left: 20%;" width="60" /></a>
+                                <p>官方微信</p>
+                            </div>
+                            <div class="col-3">
+                                <a href="#"><img src="img/weibo.png" style="padding-left: 20%;" width="50"/></a>
+                                <p>官方微博</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+   <div class="divCopyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <center>地址：广东省广州市白云区江高镇大田村广东白云学院&nbsp;|&nbsp;版权所有：广东白云学院</center>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script>
+    $(function(){
+        $(".card-cover").on("mouseover",function(){
+            $(this).children(".card-img-top").css("opacity",0.5)
+            $(this).children(".imgContain").show()
+        }).on("mouseout",function(){
+            $(this).children(".card-img-top").css("opacity",1)
+            $(this).children(".imgContain").hide()
+        })
+    })
+</script>
+
+</body>
+<script type="text/javascript">
+    var getTime = function() {
+        var weeks = new Array('星期天', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六');
+        var date = new Date();
+        var year = date.getFullYear();
+        var month = date.getMonth() + 1;
+        var day = date.getDate();
+        var week = date.getDay();
+        var hour = date.getHours();
+        var minutes = date.getMinutes();
+        var seconds = date.getSeconds();
+        return year + '年' + month + '月' + day + '日' + '  ' + weeks[week] + '  ' + hour + ":" + minutes + ":" +
+            seconds;
+    };
+
+    new Vue({
+
+        el:'#time1',
+        data:{
+            time:''
+        },
+        filters: {
+            parsetime: getTime
+        },
+        methods: {
+            refreshTime() {
+                var updataTime = getTime();
+                this.time = updataTime;
+            }
+        },
+        mounted() {
+            this.timer = setInterval(this.refreshTime, 1000);
+            console.log(getTime());
+        },
+        beforeDestroy() {
+            clearInterval(this.timer);
+        }
+    })
+</script>
+</html>

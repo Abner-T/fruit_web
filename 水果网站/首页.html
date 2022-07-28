@@ -1,0 +1,284 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>下拉菜单标准样式</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <script src="js/jQuery3.4.1.js"></script>
+    <script src="js/bootstrap.bundle.js"></script>
+    <style>
+        .btn-color {
+            color: #fff;
+            background-color: greenyellow;
+            border-color: greenyellow;
+        }
+        
+        .btn-color:hover {
+            color: #fff;
+            background-color: greenyellow;
+            border-color: greenyellow;
+        }
+        
+        .btn-color:focus,
+        .btn-color:focus {
+            color: #fff;
+            background-color: greenyellow;
+            border-color: greenyellow;
+            box-shadow: 0 0 0 0.2rem rgba(171, 42, 132, 0.5);
+        }
+        
+        .btn-color.disabled,
+        .btn-color:disabled {
+            color: #fff;
+            background-color: greenyellow;
+            border-color: greenyellow;
+        }
+        
+        .btn-color:not(:disabled):not(.disabled):active,
+        .btn-color:not(:disabled):not(.disabled).active,
+        .show>.btn-color.dropdown-toggle {
+            color: #fff;
+            background-color: greenyellow;
+            border-color: greenyellow;
+        }
+        
+        .btn-color:not(:disabled):not(.disabled):active:focus,
+        .btn-color:not(:disabled):not(.disabled).active:focus,
+        .show>.btn-color.dropdown-toggle:focus {
+            box-shadow: 0 0 0 0.2rem rgba(171, 42, 132, 0.5);
+        }
+        
+        .bg-color {
+            border-color: greenyellow;
+            background-color: greenyellow;
+        }
+        
+        .bg-color:hover {
+            border-color: greenyellow;
+            background-color: greenyellow;
+        }
+        
+        .card {
+            border: none;
+        }
+        
+        .card h5 {
+            line-height: 3rem;
+        }
+        
+        .card h5 a {
+            color: #343a40;
+            font-size: 14px;
+        }
+        
+        .card h5 a {
+            color: #ab2a84;
+            font-family: garamond;
+        }
+        
+        .card form {
+            padding-top: 9.5%;
+        }
+        
+        .card.card-body {
+            padding: 0.5rem 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-6 col-md-5" style="padding-top: 2.5%;">
+                <img src="img/logo.png" class="img-fluid">
+            </div>
+            <div class="col-6 col-md-7" style="padding-top: 2.5%;">
+                <form>
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="请输入关键字进行站内搜索">
+                        <div class="input-group-append">
+                            <button class="btn btn-color" type="submit">搜索</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-13 col-md-13" style="padding-top: 1.5%;">
+        <nav class="navbar navbar-expand-md navbar-light bg-color">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+                <div class="collapse navbar-collapse" id="menu">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="首页.html">首页</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" data-toggle="dropdown" href="#">品牌</a>
+                            <div class="dropdown-menu bg-color">
+                                <a class="dropdown-item bg-color" href="">品牌形象</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown nav-pills nav-fill">
+                            <a class="nav-link" data-toggle="dropdown" href="#">产品</a>
+                            <div class="dropdown-menu bg-color">
+                                <a class="dropdown-item bg-color" href="">优质蔬果</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="">水果预订</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="">关于我们</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-12" style="margin: 20px 0px;">
+                    <div class="carousel slide" id="myCarousel" data-ride="carousel" data-interval="3000">
+                        <ol class="carousel-indicators">
+                            <li data-slide-to="0" data-target="#myCarousel" class="active"></li>
+                            <li data-slide-to="1" data-target="#myCarousel"></li>
+                            <li data-slide-to="2" data-target="#myCarousel"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img alt="" class="d-block w-100" src="img/index1.png" width="100" height="500" />
+                            </div>
+                            <div class="carousel-item">
+                                <img alt="" class="d-block w-100 " src="img/index2.jpg" width="100" height="500" />
+                            </div>
+                            <div class="carousel-item">
+                                <img alt="" class="d-block w-100 " src="img/index3.jpg" width="100" height="500" />
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" data-slide="prev" href="#myCarousel" role="button">
+                            <span class="carousel-control-prev-icon"></span>
+                        </a>
+                        <a class="carousel-control-next" data-slide="next" href="#myCarousel" role="button">
+                            <span class="carousel-control-next-icon"></span>
+                        </a>
+
+                        <div class="row">
+                            <div class="col-12 col-md-5">
+                                <div class="card">
+                                    <h5>
+                                        <a href="" style="float: right;">注册 &nbsp; &gt; </a> 登录
+                                    </h5>
+                                    <form>
+                                        <div class="form-group">
+                                            <label for="formGroup1">用户名</label>
+                                            <input type="text" class="form-control" id="fromGroup1" placeholder="username" width="50">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="formGroup2">密码</label>
+                                            <input type="text" class="form-control" id="fromGroup2" placeholder="password">
+                                        </div>
+                                        <div class="form-group form-check">
+                                            <input type="checkbox" class="form-check-input" id="check">
+                                            <label class="form-check-label" for="check">记住我</label>
+                                        </div>
+                                        <button type="submit" class="btn btn-success">登录</button>
+
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-7">
+                                <div class="card">
+                                    <h5>
+                                        <a href="#" style="float: right;">更多 &nbsp; &gt;</a> &nbsp;最新消息
+                                    </h5>
+                                    <hr>
+                                    <div class="list-group list-group-flush">
+                                        <a class="list-group-item" href="#">最新澳大利亚橙子已经进货</a>
+                                        <a class="list-group-item" href="#">糖心苹果热卖中</a>
+                                        <a class="list-group-item" href="#">新西兰奇异果缺货中</a>
+                                        <a class="list-group-item" href="#">葡萄产品将延迟发货，请耐心等待</a>
+                                        <a class="list-group-item" href="#">顺德荔枝正当季，现已上架</a>
+                                        <a class="list-group-item" href="#">新疆葡萄现已上新</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card ztwz">
+                                    <h5>
+                                        <a href="#" style="float:right;">更多 &nbsp;&gt;</a> &nbsp;专题网站
+                                    </h5>
+                                    <hr>
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-12 col-md-3">
+                                                <a href="#"><img src=""></a>
+                                                <p>131313131</p>
+                                            </div>
+                                            <div class="col-12 col-md-3">
+                                                <a href="#"><img src=""></a>
+                                                <p>131313131</p>
+                                            </div>
+                                            <div class="col-12 col-md-3">
+                                                <a href="#"><img src=""></a>
+                                                <p>131313131</p>
+                                            </div>
+                                            <div class="col-12 col-md-3">
+                                                <a href="#"><img src=""></a>
+                                                <p>131313131</p>
+                                            </div>
+                                            <div class="col-12 col-md-3">
+                                                <a href="#"><img src=""></a>
+                                                <p>131313131</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="footer">
+                            <div class="divLink">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-12 col-md-4 leftLink">
+                                            <center>
+                                                <img class="img-fluid" src="img/logo.png" style="padding-top: 16px;">
+                                            </center>
+                                        </div>
+                                        <div class="col-12 col-md-4 rightLink">
+                                            <div class="row">
+                                                <div class="col-3 offset-2">
+                                                    <a href="#"><img src="" /></a>
+                                                    <p>官方微信</p>
+                                                </div>
+                                                <div class="col-3">
+                                                    <a href="#"><img src="" /></a>
+                                                    <p>官方微博</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="divCopyright">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <center>地址：广东省广州市白云区江高镇大田村广东白云学院&nbsp;|&nbsp;版权所有：广东白云学院</center>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+</body>
+
+</html>
